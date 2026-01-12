@@ -6,7 +6,7 @@ use warnings;
 use Carp 'croak';
 
 
-our $VERSION = '1.000';
+our $VERSION = '1.001';
 
 sub new {
     my ($class, %args) = @_;
@@ -183,13 +183,13 @@ __END__
 
 =head1 NAME
 
-Hax::Alg::RollingWindow - Fixed-capacity rolling window (overwrite-oldest)
+Algorithm::SlidingWindow - Fixed-capacity rolling window (overwrite-oldest)
 
 =head1 SYNOPSIS
 
-    use Hax::Alg::RollingWindow;
+    use Algorithm::SlidingWindow;
 
-    my $w = Hax::Alg::RollingWindow->new(
+    my $w = Algorithm::SlidingWindow->new(
         capacity => 5,
         on_evict => sub {
             my ($old) = @_;
@@ -211,7 +211,7 @@ Hax::Alg::RollingWindow - Fixed-capacity rolling window (overwrite-oldest)
 
 =head1 DESCRIPTION
 
-C<Hax::Alg::RollingWindow> implements a fixed-capacity rolling window
+C<Algorithm::SlidingWindow> implements a fixed-capacity rolling window
 using an array-backed circular buffer.
 
 When the window reaches capacity and new elements are added, the oldest
@@ -244,7 +244,7 @@ Provide predictable O(1) insertion and access behavior
 
 =head2 new
 
-    my $w = Hax::Alg::RollingWindow->new(%args);
+    my $w = Algorithm::SlidingWindow->new(%args);
 
 Creates a new rolling window.
 
@@ -271,7 +271,7 @@ where C<$old_value> is the exact scalar being evicted.
 
 =head3 Returns
 
-A new C<Hax::Alg::RollingWindow> object.
+A new C<Algorithm::SlidingWindow> object.
 
 =head1 METHODS
 
