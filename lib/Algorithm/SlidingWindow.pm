@@ -1,4 +1,4 @@
-package Algorithm::RollingWindow;
+package Algorithm::SlidingWindow;
 
 use strict;
 use warnings;
