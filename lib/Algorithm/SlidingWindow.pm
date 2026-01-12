@@ -6,7 +6,7 @@ use warnings;
 use Carp 'croak';
 
 
-our $VERSION = '0.910';
+our $VERSION = '1.000';
 
 sub new {
     my ($class, %args) = @_;
