@@ -1,4 +1,4 @@
-[![CI](https://github.com/haxmeister/perl-algorithm-slidingwindow/actions/workflows/ci.yml/badge.svg)](https://github.com/haxmeister/Hax-Alg-RollingWindow/actions/workflows/ci.yml)
+[![CI](https://github.com/haxmeister/perl-algorithm-slidingwindow/actions/workflows/ci.yml/badge.svg)](https://github.com/haxmeister/perl-algorithm-slidingwindow/actions/workflows/ci.yml)
 
 # Algorithm::SlidingWindow
 
