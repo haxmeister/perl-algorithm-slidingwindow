@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        perl: ['5.42','5.38', '5.36', '5.34', '5.32']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Perl
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: ${{ matrix.perl }}
+
+      - name: Show Perl version
+        run: perl -V
+
+      - name: Install build tools
+        run: |
+          cpanm --notest --quiet ExtUtils::MakeMaker CPAN::Meta
+
+      - name: Install distribution prerequisites
+        run: |
+          perl Makefile.PL
+          cpanm --notest --quiet --installdeps .
+
+      - name: Build and test
+        run: |
+          make
+          make test
